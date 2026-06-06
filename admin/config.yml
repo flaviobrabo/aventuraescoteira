@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: flaviobrabo/aventuraescoteira
+  branch: main
+
+media_folder: "/images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Imagem Destaque", name: "image", widget: "image", required: false}
+      - {label: "Conteúdo", name: "content", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", allow_add: true}
